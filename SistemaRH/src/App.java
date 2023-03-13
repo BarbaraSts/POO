@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         
         var engenheiro = new Engenheiro(1, "Barbara", new BigDecimal(10000), "Engenheiro De Produção", 133);
         System.out.println(engenheiro);
@@ -11,5 +11,15 @@ public class App {
 
         var presidente = new Presidente(3, "Barbara", new BigDecimal(10000), new BigDecimal(100));
         System.out.println(presidente);
+
+        FolhaPag folhaPag = new FolhaPag();
+        folhaPag.registrar(presidente);
+        folhaPag.registrar(gerente);
+        folhaPag.registrar(engenheiro);
+        System.out.println(folhaPag.getTotalFolhaPag());
+
+        folhaPag.login(presidente);
+        folhaPag.login(gerente);
+        folhaPag.login(engenheiro);
     }
 }
